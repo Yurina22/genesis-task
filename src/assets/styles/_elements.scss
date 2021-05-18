@@ -199,6 +199,12 @@
 
     }
   }
+
+  &[disabled]{
+    cursor: default;
+    pointer-events: none;
+    background-color: #CFD4DD;
+  }
 }
 
 .custom-select {
