@@ -1,0 +1,25 @@
+@import "utils/var";
+@mixin font-face($font-name, $file-name) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name + '.woff') format('woff'),
+    url($file-name + '.woff2') format('woff2'),
+    url($file-name + '.ttf')  format('truetype'),
+
+  }
+}
+
+
+@include font-face('HelveticaNeueCyr-Medium', '../fonts/HelveticaNeueCyr-Medium');
+@include font-face('HelveticaNeueCyr-Roman', '../fonts/HelveticaNeueCyr-Roman');
+@include font-face('Poppins-SemiBold', '../fonts/Poppins-SemiBold');
+@include font-face('Poppins-Light', '../fonts/Poppins-Light');
+
+$helvetica_medium: 'HelveticaNeueCyr-Medium', sans-serif;
+$helvetica_regular: 'HelveticaNeueCyr-Roman', sans-serif;
+$poppins_semi: 'Poppins-SemiBold', sans-serif;
+$poppins_light: 'Poppins-Light', sans-serif;
+
+
+
+

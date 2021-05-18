@@ -1,0 +1,47 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+/* Breakpoint sizes */
+$screen-xs: 479px;
+$screen-sm: 767px;
+$screen-md: 991px;
+$screen-lg: 1199px;
+$screen-xl: 1399px;
+
+/* Create the mixin (usually in a separate .scss file) */
+@mixin max-screen($media) {
+  @if $media == xs {
+    @media only screen and (max-width: $screen-xs) {
+      @content;
+    }
+  }  @else if $media == sm {
+    @media only screen and (max-width: $screen-sm) {
+      @content;
+    }
+  } @else if $media == md {
+    @media only screen and (max-width: $screen-md) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media only screen and (max-width: $screen-lg) {
+      @content;
+    }
+  } @else if $media == xl {
+    @media only screen and (max-width: $screen-xl) {
+      @content;
+    }
+  }
+}
+

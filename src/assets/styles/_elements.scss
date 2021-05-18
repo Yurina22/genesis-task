@@ -1,0 +1,309 @@
+.custom-check {
+  + .custom-check {
+    margin-top: 10px;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .custom-check__content {
+      .custom-check__box {
+        background: $blue;
+        border-color: transparent;
+
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__box {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    position: relative;
+    margin-right: 10px;
+    border: 1px solid $prime_off;
+    transition: $default-transition;
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: url("../images/check-white.svg") no-repeat center / contain;
+    }
+
+  }
+
+  &__text {
+    color: $gray;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__label {
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+      .custom-check__input:checked {
+        + .custom-check__content {
+          .custom-check__box {
+            border-color: transparent;
+            background: $blue_dark;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .custom-check__box {
+        border-color: $blue_dark;
+      }
+    }
+  }
+
+  &--radio {
+    .custom-check__box {
+      border-radius: 50%;
+
+      &:before {
+        width: 8px;
+        height: 8px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: #fff;
+      }
+    }
+  }
+}
+
+.custom-input {
+  + * {
+    margin-top: 10px;
+  }
+
+  width: 100%;
+
+  &__input {
+    display: block;
+    width: 100%;
+    font-family: $helvetica_regular;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid $prime_off;
+    transition: $default-transition;
+    color: $text-color;
+
+    &--textarea {
+      resize: none;
+      height: 90px;
+      width: 100%;
+      padding: 10px 15px;
+    }
+
+    &:focus,
+    &:active {
+      border-color: $blue;
+    }
+
+    @include placeholder {
+      color: $gray;
+    }
+  }
+}
+
+.add-button {
+  border: 1px dashed #DFE2E6;
+  padding: 10px 15px;
+  padding-left: 40px;
+  line-height: 20px;
+  font-size: 12px;
+  font-family: $helvetica_medium;
+  background: none;
+  cursor: pointer;
+  color: $blue;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+  transition: $default-transition;
+
+  &:focus,
+  &:active,
+  &:hover {
+    border-color: $blue;
+  }
+
+  &:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    background: url("../images/plus-blue.svg") no-repeat center / contain;
+  }
+}
+
+.text-button {
+  font-size: 16px;
+  color: $text-color;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: $helvetica_medium;
+  padding: 0;
+
+}
+
+.default-button {
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 4px;
+  background: $blue;
+  padding: 10px 15px;
+  line-height: 20px;
+  font-family: $helvetica_medium;
+  min-width: 170px;
+  transition: $default-transition;
+
+  &:hover {
+    background: $blue_dark;
+  }
+
+  &--next {
+    &:after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      margin-left: 10px;
+      background: url("../images/arrow-right-white.svg") no-repeat center/contain;
+
+    }
+  }
+}
+
+.custom-select {
+
+  .css-1okebmr-indicatorSeparator {
+    display: none;
+  }
+
+  .css-g1d714-ValueContainer {
+    padding: 0 15px;
+  }
+
+  .css-yk16xz-control {
+    border: 1px solid $prime_off;
+    min-height: 40px;
+  }
+
+  .css-1pahdxg-control {
+    box-shadow: none;
+    border: 1px solid $blue;
+    min-height: 40px;
+  }
+
+  .css-tlfecz-indicatorContainer,
+  .css-1gtu0rj-indicatorContainer {
+    padding: 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url("../images/select-drop-arrow.svg") no-repeat center / contain;
+      width: 8px;
+      height: 8px;
+      right: 20px;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  .css-1gtu0rj-indicatorContainer {
+    &:before {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  .css-26l3qy-menu {
+    background: #FFFFFF;
+    box-shadow: 0 0 12px #e1e5f0;
+    padding: 8px 10px;
+
+    .css-4ljt47-MenuList {
+      > * {
+
+        font-size: 14px;
+        font-family: $helvetica_medium;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: $default-transition;
+        padding: 10px;
+        line-height: 20px;
+
+
+        &:hover {
+          background: #F9FAFC;
+        }
+
+        &.css-9gakcf-option {
+          background-color: $blue;
+          color: #fff;
+        }
+      }
+    }
+
+  }
+}
+
+.upload-btn {
+  border: none;
+  cursor: pointer;
+  color: $blue;
+  font-family: $helvetica_medium;
+  background: #EEF2FA;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  line-height: 16px;
+  position: relative;
+  transition: $default-transition;
+
+  &:hover {
+    background-color: #DEE7FA;
+  }
+
+  &:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    flex: none;
+    margin-right: 10px;
+    background: url("../images/upload-icon-blue.svg") no-repeat center / contain;
+
+  }
+}
